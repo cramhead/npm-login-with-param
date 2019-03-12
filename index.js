@@ -6,14 +6,19 @@ const args = require('commander');
 
 args
   .version('1.1.0')
-  .option('-e, --email', 'Email address')
-  .option('-u, --username', 'Username')
-  .option('-p, --password', 'Password')
+  .option('-e, --email <email>', 'Email address')
+  .option('-u, --username <username>', 'Username')
+  .option('-p, --password <password>', 'Password')
+  .option('--echo', 'Echo the values')
   .parse(process.argv);
 
-const username = args.repository || process.env.NPM_USER;
+const username = args.username || process.env.NPM_USER;
 const password = args.password || process.env.NPM_PASS;
-const email = args.username || process.env.NPM_EMAIL;
+const email = args.email || process.env.NPM_EMAIL;
+
+if (args.echo) {
+  console.log(`email ${email} username ${username} password ${password}`);
+}
 
 if (!username) {
   console.error('Please pass arg username or set the NPM_USER environment variable');
