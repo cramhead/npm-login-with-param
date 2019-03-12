@@ -1,27 +1,51 @@
 {
-  "name": "npm-login-cmd",
-  "version": "1.0.4",
+  "name": "npm-login-with-param",
+  "version": "1.2.0-0",
   "description": "Login into npm from the non-interactive CLI",
   "bin": {
-    "npm-login-cmd": "index.js"
+    "npm-login-with-param": "index.js"
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint -c .eslintrc.json .",
+    "test": "jest --runInBand",
+    "test:watch": "jest --runInBand --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arian/npm-login-cmd.git"
+    "url": "git+https://github.com/cramhead/npm-login-with-param.git"
   },
   "keywords": [
     "npm",
     "login",
     "cli"
   ],
-  "author": "Arian Stolwijk",
+  "author": "Marc d'Entremont",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/arian/npm-login-cmd/issues"
+    "url": "https://github.com/cramhead/npm-login-with-param/issues"
   },
-  "homepage": "https://github.com/arian/npm-login-cmd#readme"
+  "homepage": "https://github.com/arian/npm-login-with-param#readme",
+  "jest": {
+    "testEnvironment": "node",
+    "modulePathIgnorePatterns": [
+      "npm-cache"
+    ],
+    "testPathIgnorePatterns": [
+      "/util/"
+    ],
+    "silent": false
+  },
+  "dependencies": {
+    "commander": "^2.19.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "jest-cli": "^24.3.1",
+    "prettier": "^1.16.4"
+  }
 }
