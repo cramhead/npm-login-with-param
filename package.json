@@ -1,6 +1,6 @@
 {
   "name": "npm-login-with-param",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Login into npm from the non-interactive CLI",
   "bin": {
     "npm-login-with-param": "index.js"
