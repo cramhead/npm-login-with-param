@@ -6,9 +6,16 @@ an interactive shell, `expect` or anything fancy. This package extends the great
 ### Usage
 
 With parameters
-`npx npm-login-with-param -u john -p secret -e john@test.com`
+
+```
+npx npm-login-with-param -u john -p secret -e john@test.com
+```
+
 or
-`npx npm-login-with-param --username john --password secret --email john@test.com`
+
+```
+npx npm-login-with-param --username john --password secret --email john@test.com
+```
 
 With environment variables
 
