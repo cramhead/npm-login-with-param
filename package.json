@@ -42,7 +42,7 @@
     }
   },
   "dependencies": {
-    "commander": "^8.10.0"
+    "commander": "^8.1.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
