@@ -42,16 +42,16 @@
     }
   },
   "dependencies": {
-    "commander": "^2.20.0"
+    "commander": "^8.10.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^2.7.0",
-    "jest-cli": "^24.9.0",
-    "prettier": "^1.18.2"
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.1",
+    "jest-cli": "^27.0.6",
+    "prettier": "^2.3.2"
   }
 }
