@@ -9,6 +9,7 @@ args
   .option('-e, --email <email>', 'Email address')
   .option('-u, --username <username>', 'Username')
   .option('-p, --password <password>', 'Password')
+  .option('--auth-type <authType>', 'Specify npm login authentication type.')
   .option('--echo', 'Echo the values')
   .parse(process.argv);
 
@@ -35,10 +36,20 @@ if (!email) {
   process.exit(1);
 }
 
-const child = childProcess.spawn('npm', ['login', '-q'], {
+// The command line arguments we'll pass to the npm command
+// (but of course, we can't pass in the the user ID, password, or e-mail)
+const npmArgs = ['login', '-q'];
+if (args.authType) {
+  console.log(`Using --auth-type=${args.authType}`);
+  npmArgs.push(`--auth-type=${args.authType}`);
+}
+
+// Actually execute the npm install command
+const child = childProcess.spawn('npm', npmArgs, {
   stdio: ['pipe', 'pipe', 'inherit'],
 });
 
+// Intercept the UI and pass in the user name, password and e-mail when "prompted" by `npm login`
 child.stdout.on('data', d => {
   const data = d.toString();
   process.stdout.write(`${d}\n`);
